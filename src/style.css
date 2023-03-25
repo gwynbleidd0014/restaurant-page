@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "ninja_narutoregular";
+  src: url("naruto.woff2") format("woff2"), url("naruto.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* COLORS */
+  --dark: #1e293b;
+  --white: #f8fafc;
+  --yellow: #fbbf24;
+  /* Font Size */
+  --medium: 1rem;
+  --large: 1.4rem;
+  --xx-large: 3rem;
+  /* Font Weight */
+  --normal: 400;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: var(--normal);
+}
+
+body {
+  background: url(background.jpg) no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+#content {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-template-rows: 2fr 6fr 1fr;
+  grid-template-areas:
+    "header"
+    "page"
+    "footer";
+}
+
+.header {
+  padding: 2em;
+  color: var(--white);
+  grid-area: header;
+}
+
+.logo {
+  margin-right: 2em;
+  display: block;
+  transition: all 0.2s ease-in;
+}
+
+.logo:hover {
+  transform: rotate(720deg) scale(1.05);
+}
+
+.nav {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+}
+
+.nav-button {
+  font-family: "ninja_narutoregular";
+  letter-spacing: 0.2em;
+  font-size: var(--large);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--white);
+}
+
+.nav-button:hover {
+  cursor: pointer;
+}
+
+.nav-button:focus,
+.nav-button:active {
+}
+.home-page {
+  grid-area: page;
+  text-align: center;
+  padding: 4em;
+}
+.heading-wrapper {
+  font-family: "ninja_narutoregular";
+  color: var(--white);
+  font-size: var(--xx-large);
+  letter-spacing: 0.2em;
+}
+
+#main-heading {
+  height: 100px;
+}
+.sub-heading {
+  display: block;
+  font-size: var(--large);
+  letter-spacing: 0.2em;
+  padding-top: 30px;
+}
+
+.animate {
+  transition: 0.3s all ease-in-out;
+}
+
+.animate:hover {
+  font-size: 1.1em;
+  cursor: default;
+}
+
+.ramen {
+  mix-blend-mode: screen;
+  max-width: 300px;
+  transition: 0.3s all ease-in-out;
+}
+
+.ramen:hover {
+  transform: scale(1.2);
+}
+
+.nav-button {
+  position: relative;
+}
+
+.nav-button::after {
+  content: "";
+  position: absolute;
+  left: -0.2em;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  opacity: 0;
+  margin-top: 0.4em;
+  transform: scale(0.1);
+  transition: transform 0.35s, opacity 0.35s;
+}
+
+.nav-button:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* STYLING CARDS */
+
+.menu-page {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-gap: 4em;
+  justify-content: center;
+  grid-area: page;
+}
+
+.card {
+  height: 600px;
+  transition: all 0.2s ease-in;
+  transform-origin: top left;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 70%;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-name {
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: "ninja_narutoregular";
+  padding: 1em;
+  text-align: center;
+}
+
+/* STYLING FOOTER */
+
+.footer,
+.about {
+  grid-area: footer;
+  text-align: center;
+  font-family: "ninja_narutoregular";
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  letter-spacing: 0.1em;
+}
+
+/* ABOUT PAGE */
+
+.about {
+  grid-area: page;
+  font-size: var(--xx-large);
+}
+
+.about > p {
+  word-wrap: break-word;
+  letter-spacing: 0.3em;
+  width: 50%;
+  line-height: 2em;
+}
